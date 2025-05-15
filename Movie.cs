@@ -40,6 +40,27 @@ namespace ApiFilm
                        $"Рейтинги: {ratings}\n";
             }
 
+        public string MovieToString()
+        {
+            var sb = new StringBuilder();
+
+            sb.AppendLine($"Название: {Title}");
+            sb.AppendLine($"Год: {Year}");
+            sb.AppendLine($"Дата выхода: {ReleaseDate}");
+            sb.AppendLine($"Время: {Runtime}");
+            sb.AppendLine($"Рейтинг общий: {Score}");
+
+            if (Ratings != null)
+            {
+                sb.AppendLine("Рейтинги:");
+                foreach (var rating in Ratings)
+                {
+                    sb.AppendLine($"{rating.Source}: {rating.Value}");
+                }
+            }
+
+            return sb.ToString();
         }
+    }
     }
 

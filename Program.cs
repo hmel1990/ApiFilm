@@ -14,7 +14,7 @@ namespace ApiFilm
             Console.WriteLine("Введите название фильма: ");
             string? filmSearch = Console.ReadLine();
             var movie = await api.GetSearchedMovieAsync(filmSearch);
-            string textMovie = movie.ToString();
+            string textMovie = movie.MovieToString();
             Console.WriteLine(movie);
             var emailSender = new SendEmailByGmail();
             emailSender.SendEmail("hmel408757595@gmail.com", textMovie);
