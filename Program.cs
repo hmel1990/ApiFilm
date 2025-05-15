@@ -17,7 +17,7 @@ namespace ApiFilm
             string textMovie = movie.ToString();
             Console.WriteLine(movie);
             var emailSender = new SendEmailByGmail();
-            emailSender.SendEmail(emailSender.receiverEmail, textMovie);
+            emailSender.SendEmail("hmel408757595@gmail.com", textMovie);
         }
     }
 }
